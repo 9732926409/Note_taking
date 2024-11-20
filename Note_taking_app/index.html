@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js")
+            .then(() => console.log("Service Worker Registered"))
+            .catch((error) => console.log("Service Worker Registration Failed", error));
+    }
+</script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Note Taking App</h1>
+        </header>
+        <main>
+            <div class="note-input">
+                <textarea id="text-note" placeholder="Write your note here..."></textarea>
+                <button id="save-text-note">Save Text Note</button>
+            </div>
+            <div class="voice-input">
+                <button id="start-voice-note">Start Voice Note</button>
+                <p id="voice-status">Press to start recording...</p>
+            </div>
+            <div class="image-input">
+                <label for="image-upload">Upload an Image:</label>
+                <input type="file" id="image-upload" accept="image/*">
+                <button id="save-image-note">Save Image Note</button>
+            </div>
+            <div id="notes-list">
+                <h2>Your Notes</h2>
+                <ul id="notes-container"></ul>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
