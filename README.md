@@ -1,2 +1,2 @@
 # Note_taking
-t\This is created by using AI.
+t\This is created by Sumon
